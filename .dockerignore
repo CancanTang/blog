@@ -1,9 +1,3 @@
 **/bin/
 **/obj/
 **/out/
-/target/
-.env
-.github
-.vscode
-docker-compose.yaml
-Dockerfile

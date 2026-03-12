@@ -145,9 +145,8 @@ ul {
     margin-left: 0.25em;
 }
 
-code {
+pre, code {
     font-family: $font-mono;
-    font-size: 0.75em;
 }
 
 code, .tag {
@@ -156,13 +155,13 @@ code, .tag {
     background-color: $color-black !important;
 }
 
+code {
+    font-size: 0.75em;
+}
+
 pre > code {
-    display: block;
-    padding: 1rem;
     line-height: 1.5;
     white-space: pre-wrap;
-    overflow-x: auto;
-    cursor: text;
 }
 
 img {
