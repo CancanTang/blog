@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net11.0</TargetFramework>
         <UserSecretsId>d681ac42-3577-452a-82a2-3b2ceea60e97</UserSecretsId>
     </PropertyGroup>
 
@@ -19,7 +19,9 @@
         <PackageReference Include="Nett" Version="0.15.0" />
         <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
         <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-        <PackageReference Include="System.Linq.Async" Version="6.0.1" />
+      <PackageReference Include="System.Linq.Async" Version="6.0.1">
+        <ExcludeAssets>all</ExcludeAssets>
+      </PackageReference>
         <PackageReference Include="System.Net.Primitives" Version="4.3.1" />
         <PackageReference Include="System.Runtime.Extensions" Version="4.3.1" />
         <PackageReference Include="System.Threading" Version="4.3.0" />
@@ -30,11 +32,7 @@
         <EmbeddedResource Include="articles/*.md" />
     </ItemGroup>
 
-    <Target Name="CompileSass" BeforeTargets="Build">
-        <MakeDir Directories="$(ProjectDir)/wwwroot/css" />
-        <Exec WorkingDirectory="$(ProjectDir)" Command="sass --style compressed scss/main.scss wwwroot/css/main.css" />
-    </Target>
-
+    
     <ItemGroup>
         <Watch Include="scss/**/*.scss" />
         <Content Update="wwwroot/css/main.css" Watch="false" />
